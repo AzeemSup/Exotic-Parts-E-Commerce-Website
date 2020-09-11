@@ -7,24 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Cart</title>
 
-     
+
     <!--bootsrap  Styles sheet  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-        <!-- style sheet for complete website -->
-     <link rel="stylesheet" href="../assets/css/exotic-parts.css">
+    <!-- style sheet for complete website -->
+    <link rel="stylesheet" href="../assets/css/exotic-parts.css">
 
 
     <!-- font family Montserrat and roboto slab -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Roboto+Slab:wght@200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-        
+
     <!-- font awesome icon link -->
     <script src="https://kit.fontawesome.com/ca30ddfff9.js" crossorigin="anonymous"></script>
 
-   
+
 </head>
 
 <body>
@@ -210,7 +210,6 @@
                 <h1 class="display-4">SHOPPING CART</h1>
             </div>
 
-
             <div class="pb-5">
                 <div class="container mt-0">
                     <div class="row">
@@ -230,7 +229,7 @@
                                             <th scope="col" class="border-0">
                                                 <div class="py-2 text-uppercase">Quantity</div>
                                             </th>
-                                            <th scope="col" class="border-0">
+                                            <th scope="col" class="border-0 remove-product">
                                                 <div class="py-2 text-uppercase">Remove</div>
                                             </th>
                                         </tr>
@@ -251,8 +250,14 @@
                                                 </div>
                                             </th>
                                             <td class="border-0 align-middle"><strong>2100 RS.</strong></td>
-                                            <td class="border-0 align-middle"><strong>3</strong></td>
-                                            <td class="border-0 align-middle"><a href="#" class="text-danger"><i
+                                            <td class="border-0 align-middle">
+                                                <div class="d-flex flex-lg-row"> 
+                                                    <button class="sub-product">-</button>
+                                                    <input class="cart-edit" type="text" name="quantity" value="1">
+                                                    <button class="add-product">+</button>
+                                                </div>
+                                            </td>
+                                            <td class="border-0 align-middle remove-product"><a href="#" class="text-danger"><i
                                                         class="fa fa-trash"></i></a></td>
                                         </tr>
                                         <tr>
@@ -269,8 +274,14 @@
                                                 </div>
                                             </th>
                                             <td class="align-middle"><strong>1200 RS.</strong></td>
-                                            <td class="align-middle"><strong>3</strong></td>
-                                            <td class="align-middle"><a href="#" class="text-danger"><i
+                                            <td class="align-middle">
+                                                <div class="d-flex flex-lg-row"> 
+                                                    <button class="sub-product">-</button>
+                                                    <input class="cart-edit" type="text" name="quantity" value="1">
+                                                    <button class="add-product">+</button>
+                                                </div>
+                                            </td>
+                                            <td class="align-middle remove-product"><a href="#" class="text-danger"><i
                                                         class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
@@ -288,8 +299,14 @@
                                                     </div>
                                                 </div>
                                             <td class="align-middle"><strong>7000 RS.</strong></td>
-                                            <td class="align-middle"><strong>2</strong></td>
-                                            <td class="align-middle"><a href="#" class="text-danger"><i
+                                            <td class="align-middle">
+                                                <div class="d-flex flex-lg-row"> 
+                                                    <input class="sub-product" value="-"> 
+                                                    <input class="cart-edit" type="text" name="quantity" value="1">
+                                                    <input class="add-product" value="+">
+                                                </div>
+                                            </td>
+                                            <td class="align-middle remove-product"><a href="#" class="text-danger"><i
                                                         class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
