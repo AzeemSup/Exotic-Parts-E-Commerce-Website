@@ -297,20 +297,35 @@ text-shadow: 1px 2px var(--red-color);
   color: var(--blue-color);
 }
 
+.price-sm{
+  display: none;
+}
 
 
 /*
    start media quries for different screen sizes
 */
-@media (max-width: 576px) { 
-  /* display none to input button*/
-  .add-product, .sub-product{
-     display: none;
-  } 
 
+@media (max-width: 576px) { 
+ /* user cart table responsiveness */
+
+  .price{
+    display: none;
+  }
+
+  .price-sm{
+    display: block;
+    color: var(--blue-color);
+  }
+  
   .cart-head{
     font-size: 14px;
   }
+
+  .main-heading{
+    font-size: 28px;
+  }
+ 
 }
 
 @media screen and (max-width: 800px) {
