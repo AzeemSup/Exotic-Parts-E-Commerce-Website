@@ -213,10 +213,10 @@
             <div class="pb-5">
                 <div class="container mt-0">
                     <div class="row">
-                        <div class="col-lg-12 p-2 bg-white rounded shadow-sm mb-5">
+                        <div class="col-lg-12 p-4 bg-white rounded shadow-sm mb-5">
 
                             <!-- Shopping cart table -->
-                            <div class="table-responsive">
+                            <div class="table-responsive-lg">
                                 <table class="table">
                                     <thead class="cart-head">
                                         <tr>
@@ -229,9 +229,9 @@
                                             <th scope="col" class="border-0">
                                                 <div class="py-2 text-uppercase">Quantity</div>
                                             </th>
-                                            <th scope="col" class="border-0 remove-product">
+                                            <!-- <th scope="col" class="border-0 remove-product">
                                                 <div class="py-2 text-uppercase">Remove</div>
-                                            </th>
+                                            </th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -251,14 +251,15 @@
                                             </th>
                                             <td class="border-0 align-middle"><strong>2100 RS.</strong></td>
                                             <td class="border-0 align-middle">
-                                                <div class="d-flex flex-lg-row"> 
-                                                    <button class="sub-product">-</button>
+                                                <div class="d-flex flex-lg-row">
+                                                    <input class="sub-product" value="-">
                                                     <input class="cart-edit" type="text" name="quantity" value="1">
-                                                    <button class="add-product">+</button>
+                                                    <input class="add-product" value="+">
                                                 </div>
                                             </td>
-                                            <td class="border-0 align-middle remove-product"><a href="#" class="text-danger"><i
-                                                        class="fa fa-trash"></i></a></td>
+                                            <!-- <td class="border-0 align-middle remove-product"><a href="#" class="text-danger"><i
+                                                        class="fa fa-trash"></i></a>
+                                                    </td> -->
                                         </tr>
                                         <tr>
                                             <th scope="row">
@@ -275,15 +276,15 @@
                                             </th>
                                             <td class="align-middle"><strong>1200 RS.</strong></td>
                                             <td class="align-middle">
-                                                <div class="d-flex flex-lg-row"> 
-                                                    <button class="sub-product">-</button>
+                                                <div class="d-flex flex-lg-row">
+                                                    <input class="sub-product" value="-">
                                                     <input class="cart-edit" type="text" name="quantity" value="1">
-                                                    <button class="add-product">+</button>
+                                                    <input class="add-product" value="+">
                                                 </div>
                                             </td>
-                                            <td class="align-middle remove-product"><a href="#" class="text-danger"><i
+                                            <!-- <td class="align-middle remove-product"><a href="#" class="text-danger"><i
                                                         class="fa fa-trash"></i></a>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                         <tr>
                                             <th scope="row">
@@ -298,17 +299,18 @@
                                                             Car Parts</span>
                                                     </div>
                                                 </div>
+                                            </th>
                                             <td class="align-middle"><strong>7000 RS.</strong></td>
                                             <td class="align-middle">
-                                                <div class="d-flex flex-lg-row"> 
-                                                    <input class="sub-product" value="-"> 
+                                                <div class="d-flex flex-lg-row">
+                                                    <input class="sub-product" value="-">
                                                     <input class="cart-edit" type="text" name="quantity" value="1">
                                                     <input class="add-product" value="+">
                                                 </div>
                                             </td>
-                                            <td class="align-middle remove-product"><a href="#" class="text-danger"><i
+                                            <!-- <td class="align-middle remove-product"><a href="#" class="text-danger"><i
                                                         class="fa fa-trash"></i></a>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                     </tbody>
                                 </table>
@@ -317,7 +319,7 @@
                         </div>
                     </div>
 
-                    <div class="row py-5 p-2 bg-white rounded shadow-sm">
+                    <div class="row py-5 p-4 bg-white rounded shadow-sm">
 
                         <div class="col-lg-6">
                             <div class="rounded-pill px-4 py-3 text-uppercase font-weight-bold cart-head">Order summary

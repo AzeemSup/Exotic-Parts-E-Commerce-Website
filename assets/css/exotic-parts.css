@@ -303,10 +303,14 @@ text-shadow: 1px 2px var(--red-color);
    start media quries for different screen sizes
 */
 @media (max-width: 576px) { 
-  /* remove delete option on small screens */
-  .remove-product{
+  /* display none to input button*/
+  .add-product, .sub-product{
      display: none;
   } 
+
+  .cart-head{
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 800px) {
