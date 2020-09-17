@@ -1,119 +1,152 @@
+// get value for toggle
 let logIn = document.querySelector("#login");
 let signUp = document.querySelector("#signup");
 let butnToggle = document.querySelector("#butn-div");
 
+//function for toggle
 function signup() {
   logIn.style.left = "-400px";
   signUp.style.left = "50px";
   butnToggle.style.left = "110px";
-  // butnToggle.style.color = " #EEE5E9";
-  // signUp.style.color = "#EEE5E9";
-  // let toggleLogin = document.querySelector("#toggle-login");
-  // toggleLogin.style.color = "#EEE5E9";
 }
 
 function login() {
   logIn.style.left = "50px";
   signUp.style.left = "-450px";
   butnToggle.style.left = "0px";
-  // logIn.style.color = "#EEE5E9";
 
 }
 
-// Form Validation 
+// form validation
+// signup validation
+// Name Validation
+function fullnameFocus(){
+  let fullName = document.querySelector("#full-name");
 
-function signupButton() {
-  let fullName = document.querySelector("#full-name").value;
-  let email = document.querySelector("#signUp-email");
-  let password = document.querySelector("#signUp-password");
-  let confirmPassword = document.querySelector("#confirm-password").value;
-  // let checkName = fullName.search("/[a-zA-Z]/g");
-  // let checkEmail = /^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@ [A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$`;
-  const reg = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-  var illegalChars= /[\(\)\<\>\,\;\:\\\/\"\[\]]/;
-
-  if (fullName == null || fullName == "") {
+  if (fullName.value == null || fullName.value == "") {
     let nameData = document.querySelector("#name-data");
-    nameData.innerText = "! please input this field";
-    nameData.style.color = "#CC2936";
-    nameData.style.fontStyle = "italic";
-    let emailIcon = document.querySelector(".signup-email");
-    emailIcon.style.top = "80px";
-    let paswdIcon = document.querySelector(".signup-pswd");
-    paswdIcon.style.top = "128px";
-    let confirmPaswdIcon = document.querySelector(".confirm-pswd");
-    confirmPaswdIcon.style.top = "174px";
-    return false;
+    nameData.innerText = "! please enter your field";
   }
-  // else if (fullName != checkName){ 
-  //   let nameData = document.querySelector("#name-data");
-  //   nameData.innerText = "! Only contains alphanumeric characters, underscore and dot";
-  //   nameData.style.color = "#CC2936"; 
-  //   nameData.style.fontStyle = "italic";
-  //   let emailIcon = document.querySelector(".signup-email");
-  //   emailIcon.style.top = "100px";
-  //   let paswdIcon = document.querySelector(".signup-pswd");
-  //   paswdIcon.style.top = "143px";
-  //   let confirmPaswdIcon = document.querySelector(".confirm-pswd");
-  //   confirmPaswdIcon.style.top = "190px";
-  //   return false;  
-  // }
-  else if (email.value.length == "") {
-    let emailData = document.querySelector("#email-data");
-    emailData.innerHTML = "! please input this field";
-    emailData.style.color = "#CC2936";
-    emailData.style.fontStyle = "italic";
-    console.log(emailData);
-    let paswdIcon = document.querySelector(".signup-pswd");
-    paswdIcon.style.top = "128px";
-    let confirmPaswdIcon = document.querySelector(".confirm-pswd");
-    confirmPaswdIcon.style.top = "175px";
-    return false;
-  }
-  else if(email.value.match(illegalChars)){
-    let emailData = document.querySelector("#email-data");
-    emailData.innerHTML = "! please enter valid email address";
-    emailData.style.color = "#CC2936";
-    emailData.style.fontStyle = "italic";
-    console.log(emailData);
-    let paswdIcon = document.querySelector(".signup-pswd");
-    paswdIcon.style.top = "128px";
-    let confirmPaswdIcon = document.querySelector(".confirm-pswd");
-    confirmPaswdIcon.style.top = "175px";
-    return false;
-  }
-  else if (password.value.length == "") {
-    let passwordData = document.querySelector("#paswd-data");
-    passwordData.innerText = "! please input this field";
-    passwordData.style.color = "#CC2936";
-    passwordData.style.fontStyle = "italic";
-    let confirmPaswdIcon = document.querySelector(".confirm-pswd");
-    confirmPaswdIcon.style.top = "178px"; 
-    return false;
-  }
-  else if (password.value.length >= 8) {
-    let passwordData = document.querySelector("#paswd-data");
-    passwordData.innerText = "! pswd atleast 8 Characters long";
-    passwordData.style.color = "#CC2936";
-    passwordData.style.fontStyle = "italic";
-    let confirmPaswdIcon = document.querySelector(".confirm-pswd");
-    confirmPaswdIcon.style.top = "178px"; 
-    return false;
-  }
-  else if (password != confirmPassword) {
-    let confirmPasswordData = document.querySelector("#confirmPaswd-data");
-    confirmPasswordData.innerText = "!pasword not match";
-    confirmPasswordData.style.color = "#CC2936";
-    confirmPasswordData.style.fontStyle = "italic";
-    return false;
+}
+
+
+function fullnameKeyup(){
+  let checkName = "/[a-zA-Z]/g";
+   let fullName = document.querySelector("#full-name");
+  
+  if (!fullName.value.match(checkName) ) {
+    let nameData = document.querySelector("#name-data");
+    nameData.innerText = "!Names only include letter";
   }
   
-  // get button 
-  else{
-    let signupBtn = document.querySelector("#signup-btn");
-  signupBtn.window.onload = login();
-  } 
 }
+
+function fullnameBlur(){
+  let fullName = document.querySelector("#full-name");
+  if ( fullName.value != null ) {
+    console.log("blur")
+    let nameData = document.querySelector("#name-data");
+    nameData.innerText = "";
+}
+}
+
+// Email Validation
+
+function emailFocus(){
+  let email = document.querySelector("#signUp-email");
+  if (email.value.length == "") {
+    let emailData = document.querySelector("#email-data");
+    emailData.innerHTML = "! please input this field";
+}
+}
+
+function emailKeyup(){
+  let mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  let email = document.querySelector("#signUp-email");
+  if (!email.value.match(mailformat) ) {
+    let emailData = document.querySelector("#email-data");
+    emailData.innerHTML = "!@ is missing.@ must include ";
+  }
+  
+}
+
+function emailBlur(){
+  let email = document.querySelector("#signUp-email");
+  if (email.value.length != "") {
+    let emailData = document.querySelector("#email-data");
+    emailData.innerHTML = "";
+}
+}
+
+//Password Validation
+
+function passwordFocus(){
+  let password = document.querySelector("#signUp-password");
+  if (password.value.length == "") {
+        let passwordData = document.querySelector("#paswd-data");
+        passwordData.innerText = "! please input this field";
+       }
+}
+
+function passwordKeyup(){
+  let password = document.querySelector("#signUp-password");
+  if (password.value.length < 8) {
+        let passwordData = document.querySelector("#paswd-data");
+        passwordData.innerText = "! pswd atleast 8 Characters long";
+  }
+}
+
+function passwordBlur(){
+  let password = document.querySelector("#signUp-password");
+   if (password.value.length > 8) {
+      let passwordData = document.querySelector("#paswd-data");
+      passwordData.innerText = "";
+   }
+}
+
+// Validation for Confirm Password
+
+function confirmPasswordFocus(){
+  let confirmPassword = document.querySelector("#confirm-password");
+  if (confirmPassword.value.length == "") {
+        let confirmPasswordData = document.querySelector("#confirmPaswd-data");
+        confirmPasswordData.innerText = "!please input this field";
+        
+   }
+}
+
+function confirmPasswordKeyup(){
+  let password = document.querySelector("#signUp-password");
+  let confirmPassword = document.querySelector("#confirm-password");
+  if (confirmPassword.value != password.value) {
+        let confirmPasswordData = document.querySelector("#confirmPaswd-data");
+        confirmPasswordData.innerText = "!pasword not match";
+  }
+}
+
+function confirmPasswordBlur(){
+  let password = document.querySelector("#signUp-password");
+  let confirmPassword = document.querySelector("#confirm-password");
+  if (confirmPassword.value == password.value) {
+        let confirmPasswordData = document.querySelector("#confirmPaswd-data");
+        confirmPasswordData.innerText = "";    
+    }
+}
+
+function signUpButton(){
+  let input = document.querySelector(".signup-input");
+  if(input.value.length !== "" ){
+    let signupBtn = document.querySelector("#signup-btn");
+    // signupBtn.window.location = login();
+    // signupBtn.innerHTML = window.open(login()); 
+    signupBtn.innerHTML=window.location.assign(login());
+
+  }
+  else{
+    console.log("error")
+  }
+}
+
 
 
 // login validation
@@ -121,57 +154,63 @@ function signupButton() {
 let myEmail = "teamdenali4@gmail.com";
 let myPassword = "TEAMdenali1234";
 
-function loginButton() {
+// Email Validation
+function loginEmailfocus(){
   let loginEmail = document.querySelector("#login-email");
-  let loginPassword = document.querySelector("#login-paswd");
-
-  
-
   if (loginEmail.value.length == "") {
     let loginEmaildata = document.querySelector("#loginemail-data");
     loginEmaildata.innerHTML = "! please input this field";
-    loginEmaildata.style.color = "#CC2936";
-    loginEmaildata.style.fontStyle = "italic";
-    let loginPaswdIcon = document.querySelector(".input-pswd");
-    loginPaswdIcon.style.top = "100px";
-    return false
   }
-  else if (loginEmail.value == myEmail) {
-    console.log("correct email");
-    return false
-  }
-  else if (loginEmail.value != myEmail) {
+}
+
+function loginEmailkeyup(){
+  let loginEmail = document.querySelector("#login-email");
+  if (loginEmail.value != myEmail) {
     let loginEmaildata = document.querySelector("#loginemail-data");
     loginEmaildata.innerHTML = "! Incorrect Email";
-    loginEmaildata.style.color = "#CC2936";
-    loginEmaildata.style.fontStyle = "italic";
-    return false;
   }
+}
 
-  else if (loginPassword.value.length == "") {
-    let loginPasswordData = document.querySelector("#loginpaswd-data");
-    loginPasswordData.innerHTML = "! please input this field";
-    loginPasswordData.style.color = "#CC2936";
-    loginPasswordData.style.fontStyle = "italic";
-    return false;
+function loginEmailblur(){
+  let loginEmail = document.querySelector("#login-email");
+  if (loginEmail.value == myEmail) {
+    let loginEmaildata = document.querySelector("#loginemail-data");
+    loginEmaildata.innerHTML = "";
   }
-  else if (loginPassword.value != myPassword) {
-    let loginPasswordData = document.querySelector("#loginpaswd-data");
-    loginPasswordData.innerHTML = "! Incorrect password";
-    loginPasswordData.style.color = "#CC2936";
-    loginPasswordData.style.fontStyle = "italic";
-    return false;
-  }
-  else if (loginPassword.value == myPassword) {
-    console.log("Correct password");
-    let loginButton = document.querySelector("#login-btn");
-    loginButton.innerHTML = window.open("welcome.html");
-    return false;
-  }  
-  // else if(loginEmail.value == myEmail && loginPassword.value == myPassword){
-  //   let loginButton = document.querySelector("#login-btn");
-  //   loginButton.innerHTML = window.location.replace("welcome.html");
-  // }
-    return true;
+}
 
+//passwd validation
+
+function loginPasswordfocus(){
+  let loginPassword = document.querySelector("#login-paswd");
+  if (loginPassword.value.length == "") {
+      let loginPasswordData = document.querySelector("#loginpaswd-data");
+      loginPasswordData.innerHTML = "! please input this field";
+    }
+}
+
+function loginPasswordkeyup(){
+  let loginPassword = document.querySelector("#login-paswd");
+  if (loginPassword.value != myPassword) {
+    let loginPasswordData = document.querySelector("#loginpaswd-data");
+    loginPasswordData.innerHTML = "!Incorect answer";
   }
+}  
+
+
+function loginPasswordblur(){
+  let loginPassword = document.querySelector("#login-paswd");
+  if (loginPassword.value == myPassword) {
+    let loginPasswordData = document.querySelector("#loginpaswd-data");
+      loginPasswordData.innerHTML = "";
+  }
+}
+
+
+function loginButton() {
+  let btn = document.querySelector("#login-btn");
+  btn.innerHTML=window.location.assign('welcome.html');
+
+}
+
+

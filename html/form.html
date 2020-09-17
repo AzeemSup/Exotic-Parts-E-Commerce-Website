@@ -20,45 +20,45 @@
             <button type="button" class="toggle-butn" id="toggle-signup" onclick="signup()">Sign Up</button>
         </div>
         <!--social media icons-->
-        <div class="icon">
+        <div class="icon-image">
           <a href="#"><img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" height="30px"/></a>
           <a href="#"><img src="https://img.icons8.com/color/48/000000/google-logo.png" height="30px"/></a>
            
         </div>
         <!--form container-->
         <div class="form-container">
-                <form action="#" method="get" id="login" onsubmit="return loginButton()">
-                    <i class="far fa-envelope input-email"></i><input type="email" class="input-field" id="login-email" autocomplete="off" placeholder="Enter Email..."> 
-                    <span id="loginemail-data" class="block"></span>
-                    <br>
-                    <i class="fas fa-lock input-pswd"></i><input type="password" class="input-field" id="login-paswd" autocomplete="off" placeholder="Enter Password...">
-                    <span id="loginpaswd-data" class="block"></span> 
-                    <br>
-                    <input type="checkbox" class="checkbox"><span>Remember me</span>
-                    <br>
-                    <button type="submit" class="submit-btn" id="login-btn" >Login</button>
-                </form>
-        </div>
-        <div  class="form-container">
-            <form action="#" method="get" id="signup" onsubmit="return signupButton()">
-                <i class="fas fa-user signup-user"></i><input type="text" class="input-field"  id="full-name" autocomplete="off" placeholder="Enter Full Name..."> 
-                <span id="name-data" class="block"></span>
-                <!-- <br>     -->
-                <i class="far fa-envelope signup-email"></i><input type="email" class="input-field"  id="signUp-email" autocomplete="off" placeholder="Enter Email..."> 
-                <span id="email-data" class="block"></span>
-                <!-- <br> -->
-                <i class="fas fa-lock signup-pswd"></i><input type="password" class="input-field" id="signUp-password" autocomplete="off" placeholder="Enter Password...">
-                <span id="paswd-data" class="block"></span>
-                <!-- <br> -->
-                <i class="fas fa-lock confirm-pswd"></i><input type="password" class="input-field"  id="confirm-password" autocomplete="off" placeholder="Confirm Password...">
-                <span id="confirmPaswd-data" class="block"></span>
+            <form action="#" method="get" id="login">
+                <i class="far fa-envelope input-email"></i><input type="email" class="input-field" id="login-email"  onfocus="loginEmailfocus()" onblur="loginEmailblur()" onkeyup="loginEmailkeyup()" autocomplete="off" placeholder="Enter Email..."> 
+                <span id="loginemail-data" class="block"></span>
                 <br>
-                <input type="checkbox" class="checkbox"><span>I agree to the terms & condition</span>
+                <i class="fas fa-lock input-pswd"></i><input type="password" class="input-field" id="login-paswd"  onfocus="loginPasswordfocus()" onblur="loginPasswordblur()" onkeyup="loginPasswordkeyup()" autocomplete="off" placeholder="Enter Password...">
+                <span id="loginpaswd-data" class="block"></span> 
                 <br>
-                <button type="submit" class="submit-btn" id="signup-btn">Signup</button>
+                <input type="checkbox" class="checkbox"><span>Remember me</span>
+                <br>
+                <button type="submit" class="submit-btn" id="login-btn" onclick="loginButton()">Login</button>
             </form>
     </div>
-    </div>
+    <div  class="form-container">
+        <form action="#" method="get" id="signup">
+            <i class="fas fa-user signup-user"></i><input type="text" class="input-field signup-input"  id="full-name" onfocus="fullnameFocus()" onblur="fullnameBlur()" onkeyup="fullnameKeyup()"  autocomplete="off" placeholder="Enter Full Name..."> 
+            <span id="name-data" class="block"></span>
+            <!-- <br>     -->
+            <i class="far fa-envelope signup-email"></i><input type="text" class="input-field signup-input"  id="signUp-email" onfocus="emailFocus()" onblur="emailBlur()" onkeyup="emailKeyup()" autocomplete="off" placeholder="Enter Email..."> 
+            <span id="email-data" class="block"></span>
+            <!-- <br> -->
+            <i class="fas fa-lock signup-pswd"></i><input type="password" class="input-field signup-input" id="signUp-password" onfocus="passwordFocus()" onblur="passwordBlur()" onkeyup="passwordKeyup()" autocomplete="off" placeholder="Enter Password...">
+            <span id="paswd-data" class="block"></span>
+            <!-- <br> -->
+            <i class="fas fa-lock confirm-pswd"></i><input type="password" class="input-field signup-input"  id="confirm-password" onfocus="confirmPasswordFocus()" onblur="confirmPasswordBlur()" onkeyup="confirmPasswordKeyup()" autocomplete="off" placeholder="Confirm Password...">
+            <span id="confirmPaswd-data" class="block"></span>
+            <br>
+            <input type="checkbox" class="checkbox"><span>I agree to the terms & condition</span>
+            <br>
+            <button type="submit" class="submit-btn" id="signup-btn" onclick="signUpButton()">Signup</button>
+        </form>
+</div>
+</div>
 
     <script src="../assets/script/form.js"></script>
 </body>

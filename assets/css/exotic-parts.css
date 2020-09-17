@@ -9,6 +9,7 @@ body {
   --red-color: #cc2936;
   --light-color: #eee5e9;
   --peach-color: #f1bf98;
+  --lightBlue-color: #6B818C;
 }
 .header{
   padding-top: 6em;
@@ -139,9 +140,11 @@ text-shadow: 1px 2px var(--red-color);
 
   /* form page Styling */
 
+/* form body color     */
 #form-bg{
   background-color: var(--blue-color)  ;
-}  
+}
+/* form styling    */
 .wrapper{
   width: 380px;
   height: 550px;
@@ -150,17 +153,19 @@ text-shadow: 1px 2px var(--red-color);
   padding: 5px;
   background-color: var(--light-color)  ;
   overflow: hidden;
-  background-image: linear-gradient(45deg, #EEE5E9,#F1BF98 ); 
+  background-image: linear-gradient(45deg, var(--light-color),var(--peach-color) ); 
   border-radius: 30px;
   box-shadow: 2px 11px 21px 14px rgba(0,0,0,0.9);
 }
+/* styling of  button  */
 .button{
   width: 220px;
   margin: 35px auto;
   position: relative;
-  box-shadow: 0px 0px 20px 0 #6B818C;
+  box-shadow: 0px 0px 20px 0 var(--lightBlue-color);
   border-radius: 30px;
 }
+/* for button styling  */
 .toggle-butn{
   padding: 10px 30px;
   cursor: pointer;
@@ -169,8 +174,9 @@ text-shadow: 1px 2px var(--red-color);
   border:0;
   position: relative;
   font-weight: 600;
-  color: #EEE5E9;
+  color:var(--light-color);
 }
+/* for toggle button  */
 #butn-div{
   top: 0;
   left: 0;
@@ -179,18 +185,21 @@ text-shadow: 1px 2px var(--red-color);
   height: 110%;
   transition: .5s;
   border-radius: 30px; 
-  background: #08415C;
+  background: var(--blue-color);
 }
-.icon{
+/* styling for icons image  */
+.icon-image{
     margin: 30px auto;
     text-align: center;
 }
+/* styling of form  */
 .form-container form{
   top: 180px;
   position: absolute;
   width: 280px;
   transition: .5s;
 }
+/* input field  */
 .input-field{
   position: relative;
   width: 90%;
@@ -198,7 +207,7 @@ text-shadow: 1px 2px var(--red-color);
   border: none;
   background-color: transparent;
   outline: none;
-  border-bottom: 1px solid #08415C;
+  border-bottom: 1px solid var(--blue-color);
   margin: 10px auto;
 }
 .input-email{
@@ -212,7 +221,7 @@ text-shadow: 1px 2px var(--red-color);
 .submit-btn{
   border: none;
   padding: 10px 30px;
-  background: #08415C;
+  background: var(--blue-color);
   width: 90%;
   display: block;
   transition: .5s;
@@ -220,7 +229,7 @@ text-shadow: 1px 2px var(--red-color);
   outline: none;
   cursor: pointer;
   font-weight: 600;
-  color: #EEE5E9;
+  color: var(--light-color);
 }
 .checkbox{
     margin: 30px 10px 30px 0px;
@@ -230,6 +239,7 @@ text-shadow: 1px 2px var(--red-color);
     bottom: 68px;
     position: absolute;
 }
+/* styling for form icons  */
 .signup-user{
   position: absolute;
   top: 18px;
@@ -247,6 +257,9 @@ text-shadow: 1px 2px var(--red-color);
   position: absolute;
   top: 155px;
 }
+/* styling of error show in js  */
 .block{
   display: block;
+  color:var(--red-color);
+  font-style: italic;
 }
