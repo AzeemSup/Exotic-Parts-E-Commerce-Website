@@ -27,7 +27,7 @@
         </div>
         <!--form container-->
         <div class="form-container">
-            <form action="#" method="get" id="login">
+            <form action="#" method="get" id="login" onsubmit="loginButton()">
                 <i class="far fa-envelope input-email"></i><input type="email" class="input-field" id="login-email"  onfocus="loginEmailfocus()" onblur="loginEmailblur()" onkeyup="loginEmailkeyup()" autocomplete="off" placeholder="Enter Email..."> 
                 <span id="loginemail-data" class="block"></span>
                 <br>
@@ -36,11 +36,11 @@
                 <br>
                 <input type="checkbox" class="checkbox"><span>Remember me</span>
                 <br>
-                <button type="submit" class="submit-btn" id="login-btn" onclick="loginButton()">Login</button>
+                <button type="submit" class="submit-btn" id="login-btn">Login</button>
             </form>
     </div>
     <div  class="form-container">
-        <form action="#" method="get" id="signup">
+        <form action="#" method="get" id="signup" onsubmit="signUpButton()">
             <i class="fas fa-user signup-user"></i><input type="text" class="input-field signup-input"  id="full-name" onfocus="fullnameFocus()" onblur="fullnameBlur()" onkeyup="fullnameKeyup()"  autocomplete="off" placeholder="Enter Full Name..."> 
             <span id="name-data" class="block"></span>
             <!-- <br>     -->
@@ -55,7 +55,7 @@
             <br>
             <input type="checkbox" class="checkbox"><span>I agree to the terms & condition</span>
             <br>
-            <button type="submit" class="submit-btn" id="signup-btn" onclick="signUpButton()">Signup</button>
+            <button type="submit" class="submit-btn" id="signup-btn">Signup</button>
         </form>
 </div>
 </div>

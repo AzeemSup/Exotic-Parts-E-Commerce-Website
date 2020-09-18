@@ -26,7 +26,9 @@ function fullnameFocus(){
   if (fullName.value == null || fullName.value == "") {
     let nameData = document.querySelector("#name-data");
     nameData.innerText = "! please enter your field";
+    return false;
   }
+  return true;
 }
 
 
@@ -37,9 +39,12 @@ function fullnameKeyup(){
   if (!fullName.value.match(checkName) ) {
     let nameData = document.querySelector("#name-data");
     nameData.innerText = "!Names only include letter";
+    return false;
   }
-  
+  return true;
 }
+  
+
 
 function fullnameBlur(){
   let fullName = document.querySelector("#full-name");
@@ -47,8 +52,11 @@ function fullnameBlur(){
     console.log("blur")
     let nameData = document.querySelector("#name-data");
     nameData.innerText = "";
+    return false;
+  }
+  return true;
 }
-}
+
 
 // Email Validation
 
@@ -57,8 +65,11 @@ function emailFocus(){
   if (email.value.length == "") {
     let emailData = document.querySelector("#email-data");
     emailData.innerHTML = "! please input this field";
+    return false;
+  }
+  return true;
 }
-}
+
 
 function emailKeyup(){
   let mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -66,8 +77,9 @@ function emailKeyup(){
   if (!email.value.match(mailformat) ) {
     let emailData = document.querySelector("#email-data");
     emailData.innerHTML = "!@ is missing.@ must include ";
+    return false;
   }
-  
+  return true;
 }
 
 function emailBlur(){
@@ -75,8 +87,11 @@ function emailBlur(){
   if (email.value.length != "") {
     let emailData = document.querySelector("#email-data");
     emailData.innerHTML = "";
+    return false;
+  }
+  return true;
 }
-}
+
 
 //Password Validation
 
@@ -85,24 +100,32 @@ function passwordFocus(){
   if (password.value.length == "") {
         let passwordData = document.querySelector("#paswd-data");
         passwordData.innerText = "! please input this field";
-       }
+        return false;
+  }
+  return true;
 }
+
 
 function passwordKeyup(){
   let password = document.querySelector("#signUp-password");
   if (password.value.length < 8) {
         let passwordData = document.querySelector("#paswd-data");
         passwordData.innerText = "! pswd atleast 8 Characters long";
+        return false;
   }
-}
+  return true;
+  }
 
 function passwordBlur(){
   let password = document.querySelector("#signUp-password");
    if (password.value.length > 8) {
       let passwordData = document.querySelector("#paswd-data");
       passwordData.innerText = "";
-   }
+      return false;
+    }
+    return true;   
 }
+
 
 // Validation for Confirm Password
 
@@ -111,9 +134,11 @@ function confirmPasswordFocus(){
   if (confirmPassword.value.length == "") {
         let confirmPasswordData = document.querySelector("#confirmPaswd-data");
         confirmPasswordData.innerText = "!please input this field";
-        
-   }
+        return false;
+  }
+  return true;
 }
+
 
 function confirmPasswordKeyup(){
   let password = document.querySelector("#signUp-password");
@@ -121,8 +146,11 @@ function confirmPasswordKeyup(){
   if (confirmPassword.value != password.value) {
         let confirmPasswordData = document.querySelector("#confirmPaswd-data");
         confirmPasswordData.innerText = "!pasword not match";
+        return false;
   }
+  return true;
 }
+
 
 function confirmPasswordBlur(){
   let password = document.querySelector("#signUp-password");
@@ -130,23 +158,32 @@ function confirmPasswordBlur(){
   if (confirmPassword.value == password.value) {
         let confirmPasswordData = document.querySelector("#confirmPaswd-data");
         confirmPasswordData.innerText = "";    
-    }
+        return false;
+  }
+  return true;
+}
+
+//function for clear input
+
+function clearData(){
+  console.log(document.querySelector("#full-name"));
+  document.querySelector("#full-name").value = "";
+  document.getElementById("#signUp-email").value = "";
+  document.getElementById("#signUp-password").value = "";
+  document.getElementById("#confirm-password").value = "";
+  
 }
 
 function signUpButton(){
   let input = document.querySelector(".signup-input");
-  if(input.value.length !== "" ){
-    let signupBtn = document.querySelector("#signup-btn");
-    // signupBtn.window.location = login();
-    // signupBtn.innerHTML = window.open(login()); 
-    signupBtn.innerHTML=window.location.assign(login());
-
-  }
+ if( fullnameFocus() && emailFocus() && passwordFocus() && confirmPasswordFocus() ){
+  window.location.assign(login());
+  clearData();
+ }
   else{
     console.log("error")
   }
 }
-
 
 
 // login validation
@@ -160,24 +197,33 @@ function loginEmailfocus(){
   if (loginEmail.value.length == "") {
     let loginEmaildata = document.querySelector("#loginemail-data");
     loginEmaildata.innerHTML = "! please input this field";
+    return false;
   }
+  return true;
 }
+
 
 function loginEmailkeyup(){
   let loginEmail = document.querySelector("#login-email");
   if (loginEmail.value != myEmail) {
     let loginEmaildata = document.querySelector("#loginemail-data");
     loginEmaildata.innerHTML = "! Incorrect Email";
+    return false;
   }
+  return true;
 }
+
 
 function loginEmailblur(){
   let loginEmail = document.querySelector("#login-email");
   if (loginEmail.value == myEmail) {
     let loginEmaildata = document.querySelector("#loginemail-data");
     loginEmaildata.innerHTML = "";
+    return false;
   }
+  return true;
 }
+
 
 //passwd validation
 
@@ -186,16 +232,22 @@ function loginPasswordfocus(){
   if (loginPassword.value.length == "") {
       let loginPasswordData = document.querySelector("#loginpaswd-data");
       loginPasswordData.innerHTML = "! please input this field";
-    }
+      return false;
+  }
+  return true;
 }
+
 
 function loginPasswordkeyup(){
   let loginPassword = document.querySelector("#login-paswd");
   if (loginPassword.value != myPassword) {
     let loginPasswordData = document.querySelector("#loginpaswd-data");
     loginPasswordData.innerHTML = "!Incorect answer";
+    return false;
   }
-}  
+  return true;
+}
+
 
 
 function loginPasswordblur(){
@@ -203,13 +255,26 @@ function loginPasswordblur(){
   if (loginPassword.value == myPassword) {
     let loginPasswordData = document.querySelector("#loginpaswd-data");
       loginPasswordData.innerHTML = "";
+      return false;
   }
+  return true;
 }
 
+function clearLogin(){
+  document.querySelector("#login-email").value="";
+  document.querySelector("#login-paswd").value="";
+  
+}
 
 function loginButton() {
   let btn = document.querySelector("#login-btn");
-  btn.innerHTML=window.location.assign('welcome.html');
+  if( loginEmailfocus() && loginPasswordfocus()){
+    window.open('../index.html');
+    clearLogin();
+   }
+    else{
+      console.log("error")
+    }
 
 }
 
