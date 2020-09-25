@@ -184,3 +184,36 @@ async function getProducts() {
 }
 //function calling - get products
 getProducts();
+
+// Checkout button removing products from localstorage
+let clearLS = document.getElementById("checkoutbtn");
+clearLS.addEventListener('click', function(){
+  let webtask = window.localStorage.clear();
+  return webtask;
+})
+
+// Delivery Time
+let checkoutbtn = document.getElementById("checkoutbtn");
+let checkouttime = document.getElementById("checkout-time");
+let deliverytime = document.getElementById("delivery-time");
+
+checkoutbtn.addEventListener('click', () => {
+  let today = new Date();
+  let tomorrow = new Date();
+
+  let month = today.getMonth() + 1;
+  let year = today.getFullYear();
+  let date = today.getDate();
+
+  let currentDate = `${date}/${month}/${year}`;
+  let tomorrowDate = `${date+1}/${month}/${year}`;
+
+  let hours = today.getHours();
+  let minutes = today.getMinutes();
+  let seconds = today.getSeconds();
+
+  let currentTime = `${hours}:${minutes}:${seconds}`;
+
+  checkouttime.innerText = currentDate+' '+currentTime;
+  deliverytime.innerText = tomorrowDate+' '+currentTime;
+})
